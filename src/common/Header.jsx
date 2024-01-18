@@ -27,9 +27,16 @@ const Header = () => {
       <li>
         <Link to="/volunteer">Volunteer</Link>
       </li>
+      
+      { user && <> 
       <li>
         <Link to="/alumni-directory">Alumni Directory</Link>
       </li>
+      <li>
+        <Link to="/news-feed">News Feed</Link>
+      </li>
+      
+      </>}
       <li>
         <Link to="/give-now">Give Now</Link>
       </li>

@@ -9,6 +9,7 @@ import Dashboard from "../layout/Dashboard";
 import AddNewsFeed from "../pages/Dashboard/Alumni/AddNewsFeed/AddNewsFeed";
 import AlumniHome from "../pages/Dashboard/Alumni/AlumniHome/AlumniHome";
 import ManageNewsFeed from "../pages/Dashboard/Alumni/AddNewsFeed/ManageNewsFeed";
+import NewsFeed from "../pages/NewsFeed/NewsFeed";
 
 
 export const router = createBrowserRouter([
@@ -35,6 +36,10 @@ export const router = createBrowserRouter([
       {
         path: "/alumni-directory/addprofile",
         element: <AddProfile></AddProfile>,
+      },
+      {
+        path: "/news-feed",
+        element: <NewsFeed></NewsFeed>,
       },
     ],
   },
