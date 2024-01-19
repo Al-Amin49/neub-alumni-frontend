@@ -34,6 +34,11 @@ const Dashboard = () => {
                   All Users
                 </NavLink>
               </li>
+              <li>
+                <NavLink to="/dashboard/add-announcement">
+                  Announcements
+                </NavLink>
+              </li>
             </>
           ) : (
             <>
@@ -47,8 +52,8 @@ const Dashboard = () => {
                 <NavLink to="/dashboard/newsfeed">Add Newsfeed </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/manage-newsfeed">
-                  Mange News Feed{" "}
+                <NavLink to="/dashboard/announcement">
+                  Announcement{" "}
                 </NavLink>
               </li>
             </>

@@ -1,26 +1,28 @@
+
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
 import { toast } from "react-toastify";
-import { AddNewsFeed } from "../../../../api/NewsFeed";
-import { useAuth } from "../../../../context/AuthProvider";
+import { addAnnouncement } from "../../../../api/Announcement";
 
-const AddNewsFeedPost = () => {
+
+
+const AddAnnoucement = () => {
   const { register, handleSubmit, reset } = useForm();
-  const [newsfeed, setNewsfeed]= useState([])
+  const [announcement, setAnnouncement]= useState([])
 
   const onSubmit = async (data) => {
     try {
-      const response = await AddNewsFeed(data);
+      const response = await addAnnouncement(data);
       console.log("News feed post created successfully", response);
-      setNewsfeed((prevNewsfeed) => [response.data, ...prevNewsfeed]);
+      setAnnouncement((prevAnnouncement) => [response.data, ...prevAnnouncement]);
       reset();
-      toast.success("News feed post added successfully");
+      toast.success("Announement added successfully");
     } catch (error) {
-      console.error("Error creating news feed post", error);
+      console.error("Error creating announcement", error);
     }
   };
-const {user}=useAuth()
+
   return (
     <div className="pb-10">
       <h3 className="text-center py-4 font-medium text-primary">
@@ -30,13 +32,12 @@ const {user}=useAuth()
         <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control w-full my-6">
             <label className="label">
-              <span className="label-text">User id</span>
+              <span className="label-text">Title</span>
             </label>
             <input
               type="text"
-              placeholder="Name"
-              {...register("user")}
-              value={user._id}
+              placeholder="Title"
+              {...register("title")}
               className="input input-bordered w-full"
             />
           </div>
@@ -51,19 +52,9 @@ const {user}=useAuth()
               className="textarea textarea-bordered w-full"
             />
           </div>
-          <div className="form-control w-full my-6">
-            <label className="label">
-              <span className="label-text">Image URL</span>
-            </label>
-            <input
-              type="text"
-              placeholder="Image URL"
-              {...register("image")}
-              className="input input-bordered w-full"
-            />
-          </div>
+
           <div className="text-center">
-            <button className="btn btn-primary my-10">Add Post</button>
+            <button className="btn btn-primary my-10">Add Announcement</button>
           </div>
         </form>
       </div>
@@ -71,4 +62,5 @@ const {user}=useAuth()
   );
 };
 
-export default AddNewsFeedPost;
+export default AddAnnoucement;
+

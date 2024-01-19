@@ -8,8 +8,10 @@ import AddProfile from "../pages/AlumniDirectory/AddProfile";
 import Dashboard from "../layout/Dashboard";
 import AddNewsFeed from "../pages/Dashboard/Alumni/AddNewsFeed/AddNewsFeed";
 import AlumniHome from "../pages/Dashboard/Alumni/AlumniHome/AlumniHome";
-import ManageNewsFeed from "../pages/Dashboard/Alumni/AddNewsFeed/ManageNewsFeed";
 import NewsFeed from "../pages/NewsFeed/NewsFeed";
+import Announcement from "../pages/Dashboard/Alumni/AddNewsFeed/Announcement";
+import AddAnnoucement from "../pages/Dashboard/Admin/Announcements/AddAnnouncement";
+import Library from "../pages/Library/Library";
 
 
 export const router = createBrowserRouter([
@@ -41,6 +43,10 @@ export const router = createBrowserRouter([
         path: "/news-feed",
         element: <NewsFeed></NewsFeed>,
       },
+      {
+        path: "/library",
+        element: <Library></Library>,
+      },
     ],
   },
   {
@@ -57,9 +63,13 @@ export const router = createBrowserRouter([
             element:<AddNewsFeed/>
         },
         {
-            path:'manage-newsfeed',
-            element:<ManageNewsFeed/>
-        }
+            path:'announcement',
+            element:<Announcement/>
+        },
+        {
+            path:'add-announcement',
+            element:<AddAnnoucement/>
+        },
     
 
   ]

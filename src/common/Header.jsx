@@ -2,9 +2,18 @@ import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/Home/alumniLogo.png";
 import { useAuth } from "../context/AuthProvider";
 import Loading from "../components/Loading/Loading";
-
+import { IoMdNotifications } from "react-icons/io";
+import { useState } from "react";
 const Header = () => {
   const { user, loading, logOut } = useAuth();
+  const [notificationCount, setNotificationCount] = useState(1); // Initialize with your initial count
+  const [showNotifications, setShowNotifications] = useState(false);
+
+  const toggleNotifications = () => {
+    setShowNotifications((prev) => !prev);
+    // Reset the notification count when the notification panel is opened
+    setNotificationCount(0);
+  };
   console.log(user)
  
   const navigate = useNavigate();
@@ -27,6 +36,9 @@ const Header = () => {
       <li>
         <Link to="/volunteer">Volunteer</Link>
       </li>
+      <li>
+        <Link to="/library">Library</Link>
+      </li>
       
       { user && <> 
       <li>
@@ -43,6 +55,22 @@ const Header = () => {
       {user && (user.role==='admin' || user.role==='alumni') && <li>
         <Link to="/dashboard">Dashboard</Link>
       </li>}
+      {user &&user.role === 'alumni' && (
+        <>
+          <div className="text-2xl flex text-black items-center cursor-pointer relative" onClick={toggleNotifications}>
+            <IoMdNotifications />
+            {notificationCount > 0 && <span className="bg-red-500 text-white rounded-full px-2 ml-1 absolute -top-1 -right-1 text-xs">{notificationCount}</span>}
+          </div>
+          {/* Notification Panel */}
+          {showNotifications && (
+            <div className="absolute right-64  top-12 mt-3 bg-white shadow p-2 rounded w-40">
+              {/* Display notifications here */}
+              <p className="text-green-500 font-bold mb-2">Exclusive Alumni Content</p>
+              <small className="text-gray-500">Click for more details</small>
+            </div>
+          )}
+        </>
+      )}
     </>
   );
   return (
