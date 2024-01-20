@@ -12,6 +12,7 @@ import NewsFeed from "../pages/NewsFeed/NewsFeed";
 import Announcement from "../pages/Dashboard/Alumni/AddNewsFeed/Announcement";
 import AddAnnoucement from "../pages/Dashboard/Admin/Announcements/AddAnnouncement";
 import Library from "../pages/Library/Library";
+import ManageResources from "../pages/Dashboard/Admin/Library/ManageResources";
 
 
 export const router = createBrowserRouter([
@@ -69,6 +70,10 @@ export const router = createBrowserRouter([
         {
             path:'add-announcement',
             element:<AddAnnoucement/>
+        },
+        {
+            path:'resources',
+            element:<ManageResources/>
         },
     
 

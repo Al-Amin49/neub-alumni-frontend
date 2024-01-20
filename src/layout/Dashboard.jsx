@@ -23,10 +23,10 @@ const Dashboard = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/addItems">Add Items</NavLink>
+                <NavLink to="/dashboard/addItems">Events</NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/manageItems">Manage Items</NavLink>
+                <NavLink to="/dashboard/manageItems">Blogs</NavLink>
               </li>
               <li>
                 <NavLink to="/dashboard/users">
@@ -37,6 +37,11 @@ const Dashboard = () => {
               <li>
                 <NavLink to="/dashboard/add-announcement">
                   Announcements
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/resources">
+                  Manage Resources
                 </NavLink>
               </li>
             </>

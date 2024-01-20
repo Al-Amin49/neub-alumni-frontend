@@ -65,7 +65,7 @@ const Header = () => {
           {showNotifications && (
             <div className="absolute right-64  top-12 mt-3 bg-white shadow p-2 rounded w-40">
               {/* Display notifications here */}
-              <p className="text-green-500 font-bold mb-2">Exclusive Alumni Content</p>
+              <p className="text-green-500 font-bold mb-2">Exciting Alumni Event Announcements</p>
               <small className="text-gray-500">Click for more details</small>
             </div>
           )}
