@@ -13,6 +13,7 @@ import Announcement from "../pages/Dashboard/Alumni/AddNewsFeed/Announcement";
 import AddAnnoucement from "../pages/Dashboard/Admin/Announcements/AddAnnouncement";
 import Library from "../pages/Library/Library";
 import ManageResources from "../pages/Dashboard/Admin/Library/ManageResources";
+import Chat from "../pages/Chat/Chat";
 
 
 export const router = createBrowserRouter([
@@ -48,6 +49,10 @@ export const router = createBrowserRouter([
         path: "/library",
         element: <Library></Library>,
       },
+      {
+        path: "/chat",
+        element: <Chat></Chat>,
+      },
     ],
   },
   {
@@ -75,6 +80,8 @@ export const router = createBrowserRouter([
             path:'resources',
             element:<ManageResources/>
         },
+        
+       
     
 
   ]
