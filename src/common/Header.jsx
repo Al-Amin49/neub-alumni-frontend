@@ -48,7 +48,7 @@ const Header = () => {
         <Link to="/news-feed">News Feed</Link>
       </li>
       <li>
-        <Link to="/chat">Chat</Link>
+        <Link to="/chats">Chats</Link>
       </li>
       
       </>}

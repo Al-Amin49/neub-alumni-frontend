@@ -50,7 +50,7 @@ export const router = createBrowserRouter([
         element: <Library></Library>,
       },
       {
-        path: "/chat",
+        path: "/chats",
         element: <Chat></Chat>,
       },
     ],
